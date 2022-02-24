@@ -13,6 +13,9 @@ var clickablesManager;
 // an array of clickable objects
 var clickables;
 
+//  Text description of the current state of the drone
+var descriptions = [];
+
 // drone array & index
 var drones = [];
 var droneIndex = 0;
@@ -22,15 +25,20 @@ var hatchOpen = false;
 var xPos = 700;
 var xSpacing = 300;
 var ySpacing = 150;
-var yPos = 175;
+var yPos = 250;
 
 // Preload images and Clickables
 function preload(){
   drones[0] = loadImage('assets/drone_default.png');
+  descriptions[0] = "The drone is currently in its default state, ready to fly around and help people!";
   drones[1] = loadImage('assets/drone_open.png');
+  descriptions[1] = "The drone's hatch is open! It now has access to some other functions";
   drones[2] = loadImage('assets/drone_fire_extinguisher.png');
+  descriptions[2] = "This drone is equipped with a fire extinguisher to prevent any flames spreading";
   drones[3] = loadImage('assets/drone_mask.png');
+  descriptions[3] = "The drone has a built-in oxygen mask in case of emergency";
   drones[4] = loadImage('assets/drone_bandaid.png');
+  descriptions[4] = "If anyone gets scraped or cut, the drone can apply a spray-on bandage to temporarily seal their wound";
   clickablesManager = new ClickableManager('assets/clickableLayout.csv');
 }
 
@@ -72,6 +80,13 @@ function drawText() {
   text("A drone equipped with many tools to aid in a rescue operation." , 200, 635, 400, 150);
   textSize(18);
   text("Click the buttons to see how it works!" , 200, 700, 400, 50);
+
+
+  fill("#E9EAEF")
+  rect(700, 133, 500, 90, 10);
+  fill(0);
+  textSize(20);
+  text(descriptions[droneIndex], 710, 155, 480, 200);
 }
 
 // Draw the png image in the arr specified by index
