@@ -1,0 +1,6 @@
+ID,Name,PNGFilename,Text,x,y,visible
+0,OpenHatch,,Open Hatch,xPos + xSpacing,yPos + 25,yes
+1,CloseHatch,,Close Hatch,xPos,yPos + 25,yes
+2,FireExtinguisher,assets/fire_extinguisher.png,,xPos + 50,yPos+ ySpacing,yes
+3,Mask,assets/mask.png,,xPos + xSpacing + 50,yPos+ ySpacing,yes
+4,Bandaid,assets/bandaid.png,,xPos + xSpacing + 50,yPos + ySpacing * 2,yes
